@@ -1,11 +1,11 @@
-import { useState } from "react";
 import "./App.css";
+import Router from "./router";
 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-     <div>Home</div>
+    <div>
+     <Router/>
     </div>
   );
 }
