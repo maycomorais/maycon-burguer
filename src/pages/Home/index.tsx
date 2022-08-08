@@ -1,12 +1,10 @@
+import Menu from "../../components/Menu";
+import * as Styled from "./styles"
+
 const Home = () => {
   return (
-    <div>
-      <div className="Menu">
-        <img src="" alt="Logo" />
-        <img src="" alt="Home" />
-        <img src="" alt="Settings" />
-        <img src="" alt="Logout" />        
-      </div>
+    <Styled.HomeContainer>
+      <Menu/>
       <div className="home-content">
         <header>
             <div>
@@ -75,7 +73,7 @@ const Home = () => {
         <div></div>
         <div></div>
       </aside>
-    </div>
+    </Styled.HomeContainer>
   );
 };
 
