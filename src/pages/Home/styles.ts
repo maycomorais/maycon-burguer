@@ -49,10 +49,9 @@ export const TitleContainer = styled.div`
 
   p {
     font-family: "Bebas Neue", cursive;
-    font-size: 2px;
-    text-transform: capitalize;
-    font-size: 20px;
+    font-size: 12px;
     text-align: end;
+    padding-top: 15px;
     margin-bottom: 15px;
     color: #970000;
   }

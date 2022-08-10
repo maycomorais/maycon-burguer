@@ -64,7 +64,7 @@ export const MenuItemButton = styled.button<MenuItemButtonProps>`
   justify-content: center;
   margin-left: 10px;
   background-color: #970000;
-  color: orangered;
+  color: #f78102;
   border-radius: 50%;
   cursor: pointer;
   border: none;

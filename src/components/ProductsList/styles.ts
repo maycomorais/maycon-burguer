@@ -88,7 +88,7 @@ export const Box = styled.div`
 
   .preco span {
     font-family: "Lobster", cursive;
-    color: red;
+    color: #970000;
   }
 
   :hover .preco span {
