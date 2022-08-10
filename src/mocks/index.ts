@@ -3,7 +3,7 @@ import brieBurguer from "../assets/images/brie-burguer.jpg";
 import carneQueijo from "../assets/images/carne-e-queijo.jpg";
 import cheddar from "../assets/images/cheddar.jpg";
 import catupiryBacon from "../assets/images/catupiry-com-bacon.jpg";
-import cheeseburguer from "../assets/images/cheeseburguer.jpg";
+import cheeseburguer from "../assets/images/cheeseburger.jpg";
 import costela from "../assets/images/costela.jpg";
 import duploBacon from "../assets/images/duplo-bacon.jpg";
 import fraldinha from "../assets/images/fraldinha-na-mostarda.jpg";
@@ -15,7 +15,7 @@ import batataRustica from "../assets/images/batata-rustica.jpg";
 import fritas from "../assets/images/fritas-com-molho-de-queijo-e-bacon.jpg";
 import palitos from "../assets/images/palitos-de-mucarela.jpg";
 import agua from "../assets/images/agua-com-e-sem-gas.jpg";
-import chopp from "../assets/images/chopp_amstel-ou-heineken.jpg";
+import chopp from "../assets/images/chopp-amstel-ou-heineken.jpg";
 import cerveja from "../assets/images/heineken-e-sol-long-neck.jpg";
 import refrigetante from "../assets/images/refrigerantes.jpg";
 import MilkShake from "../assets/images/milk-shakes.jpg";
@@ -60,7 +60,7 @@ export const mockedProducts: T.Product[] = [
   },
   {
     id: "ef550853-9fb4-4b97-8e88-843c2f827ee4",
-    name: "Catupiry com Bacon",
+    name: "Catupiry e Bacon",
     description:
       "Hamburguer com duas carnes bovinas de 180g e molho especial tipo Ranch.",
     price: 28.99,
