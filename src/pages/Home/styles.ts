@@ -11,6 +11,10 @@ export const HomeContainer = styled.div`
   background-color: #eeeeee;
   color: #970000;
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   section {
     width: 100%;
     display: flex;
@@ -24,6 +28,8 @@ export const HomeContainer = styled.div`
 
 export const HomeContentContainer = styled.div`
   width: 67vw;
+  display: flex;
+  flex-direction: column;
   margin-left: 10vw;
 `;
 
@@ -142,6 +148,10 @@ export const TableSelect = styled.select`
   color: #eeeeee;
   padding: 0 1rem;
   box-sizing: border-box;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 20px;
+  
   :focus {
     outline: none;
     color: #ffffff;

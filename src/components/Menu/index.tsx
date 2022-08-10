@@ -1,12 +1,15 @@
 import * as Styled from "./styles";
 import logo from "../../assets/logo_paterns/logo.png";
 import { HomeIcon, SettingsIcon, LogoutIcon } from "../../assets/icons";
+import { useNavigate } from "react-router-dom";
 
 interface MenuProps {
   path: "home" | "settings";
 }
 
 const Menu = ({ path }: MenuProps) => {
+  const navigate = useNavigate()
+
   return (
     <Styled.MenuContainer>
       <img src={logo} alt="Logo" />
@@ -23,7 +26,7 @@ const Menu = ({ path }: MenuProps) => {
         </Styled.MenuItems>
       </nav>
       <Styled.MenuItems logout>
-        <Styled.MenuItemButton>
+        <Styled.MenuItemButton onClick={() => navigate("/login")}>
           <LogoutIcon />
         </Styled.MenuItemButton>
       </Styled.MenuItems>

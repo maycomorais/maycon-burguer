@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import theme from "../../assets/styles/theme";
 
 interface MenuItemProps {
   logout?: boolean;
@@ -41,6 +42,8 @@ export const MenuItems = styled.div<MenuItemProps>`
   border-radius: 45% 0 0 45%;
   color: white;
 
+  
+
   ${({ logout }) =>
     logout &&
     css`
@@ -79,5 +82,6 @@ export const MenuItemButton = styled.button<MenuItemButtonProps>`
     css`
       background-color: orangered;
       color: #ffffff;
+
     `}
 `;

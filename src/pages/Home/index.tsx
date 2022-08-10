@@ -2,9 +2,26 @@ import { DateTime } from "luxon";
 import { SearchIcon } from "../../assets/icons";
 import Menu from "../../components/Menu";
 import ProductList from "../../components/ProductsList";
+import { mockedProducts } from "../../mocks";
+import { mockedCategories } from "../../mocks";
+import { useState } from "react";
 import * as Styled from "./styles";
+import { Category, Product } from "../../types";
+import OrderDetails from "../../components/OrderDetails";
 
 const Home = () => {
+  const [selectedCategory, setSelectedCategory] = useState(
+    mockedCategories[0]
+  );
+
+  const filteredProducts: Product[] = mockedProducts.filter(
+    (element) => element.categoryId === selectedCategory.id
+  );
+
+  const handleChangeCategory = (category: Category) => {
+    setSelectedCategory(category);
+  };
+
   const actualDate = DateTime.now();
   const formatedDate = `${actualDate.weekdayShort}, ${actualDate.day} de ${actualDate.monthLong} de ${actualDate.year}`;
 
@@ -24,65 +41,33 @@ const Home = () => {
         </Styled.HomeContentHeader>
         <section>
           <Styled.CategorieNavigatorBar>
-            <Styled.CategoriesNavigationButton active>
-              Lanches
-            </Styled.CategoriesNavigationButton>
-            <Styled.CategoriesNavigationButton>
-              Porções
-            </Styled.CategoriesNavigationButton>
-            <Styled.CategoriesNavigationButton>
-              Sobremesas
-            </Styled.CategoriesNavigationButton>
-            <Styled.CategoriesNavigationButton>
-              Bebidas
-            </Styled.CategoriesNavigationButton>
+            {mockedCategories.map((element) => {
+              return (
+                <Styled.CategoriesNavigationButton
+                  active={element.name === selectedCategory.name}
+                  onClick={() => handleChangeCategory(element)}
+                >
+                  {element.name}
+                </Styled.CategoriesNavigationButton>
+              );
+            })}
           </Styled.CategorieNavigatorBar>
           <Styled.ProductsHeaderContainer>
             <h2>Escolha seu Lanche</h2>
             <Styled.TableSelect defaultValue="">
-              <option value="" disabled>Selecione a Mesa</option>
+              <option value="" disabled>
+                Selecione a Mesa
+              </option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </Styled.TableSelect>
           </Styled.ProductsHeaderContainer>
-          <ProductList/>
+          <ProductList list={filteredProducts} />
         </section>
       </Styled.HomeContentContainer>
-      <aside>
-        <header>
-          <h2>Pedido #12</h2>
-          <div>
-            <button>Comer no Local</button>
-            <button>P/ Viagem</button>
-            <button>Delivery</button>
-          </div>
-          <div>
-            <h3>Item</h3>
-            <h3>Qtd</h3>
-            <h3>Preço</h3>
-          </div>
-          <div className="checkout-card-container">
-            <div>Card Checkout</div>
-            <div>Card Checkout</div>
-            <div>Card Checkout</div>
-          </div>
-          <div>
-            <div>
-              <p>Desconto</p>
-              <p>R$ 0,00</p>
-            </div>
-            <div>
-              <p>Sub-Total</p>
-              <p>R$ 0,00</p>
-            </div>
-            <button>Continuar para o Pagamento</button>
-          </div>
-        </header>
-        <div></div>
-        <div></div>
-      </aside>
+      <OrderDetails/>
     </Styled.HomeContainer>
   );
 };
