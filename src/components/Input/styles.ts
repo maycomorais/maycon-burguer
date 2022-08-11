@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface StyledInputProps {
-  inputSize?: "small" | "large";
+  inputSize?: "small" | "large" | "login";
 }
 
 export const StyledInput = styled.input<StyledInputProps>`
@@ -24,6 +24,16 @@ export const StyledInput = styled.input<StyledInputProps>`
     ${inputSize === "large" &&
     css`
       width: 200px;
+    `}
+    ${inputSize === "login" &&
+    css`
+      width: 250px;
+      background-color: ${theme.colors.terciaryColor};
+      border: none;
+      border-bottom: 1px solid ${theme.colors.primaryColor};
+      border-radius: 0;
+      margin-bottom: 20px;
+      text-align: ;
     `}
   `}
 `;
