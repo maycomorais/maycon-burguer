@@ -17,7 +17,7 @@ const Login = ({ setLogged }: LoginProps) => {
   const [senha, setSenha] = useState<string>("");
 
   const handleLogin = () => {
-    if (email === "admin@admin.com" && senha === "admin") {
+    if (email === "admin" && senha === "admin") {
       setLogged(true);
       navigate("/");
       toast.success("Login efetuado com sucesso");
