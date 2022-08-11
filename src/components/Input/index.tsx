@@ -2,7 +2,7 @@ import { ChangeEventHandler, InputHTMLAttributes } from "react";
 import { StyledInput } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  inputSize?: "small" | "large";
+  inputSize?: "small" | "large" | "login";
 }
 
 const Input = ({ inputSize, ...props }: InputProps) => {
