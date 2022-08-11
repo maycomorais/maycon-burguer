@@ -10,24 +10,30 @@ interface MenuProps {
 }
 
 const Menu = ({ path, setLogged }: MenuProps) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     setLogged(false);
-    navigate("/login")
-  }
+    navigate("/login");
+  };
 
   return (
     <Styled.MenuContainer>
       <img src={logo} alt="Logo" />
       <nav>
         <Styled.MenuItems active={path === "home"}>
-          <Styled.MenuItemButton active={path === "home"}>
+          <Styled.MenuItemButton
+            onClick={() => navigate("/")}
+            active={path === "home"}
+          >
             <HomeIcon />
           </Styled.MenuItemButton>
         </Styled.MenuItems>
         <Styled.MenuItems active={path === "settings"}>
-          <Styled.MenuItemButton active={path === "settings"}>
+          <Styled.MenuItemButton
+            onClick={() => navigate("/settings")}
+            active={path === "settings"}
+          >
             <SettingsIcon />
           </Styled.MenuItemButton>
         </Styled.MenuItems>
